@@ -27,9 +27,10 @@ public final class R {
         public static final int ic_launcher=0x7f020003;
     }
     public static final class id {
-        public static final int action_addMile=0x7f080023;
-        public static final int action_cancelMile=0x7f080022;
+        public static final int action_addMile=0x7f080024;
+        public static final int action_cancelMile=0x7f080023;
         public static final int action_new_mile=0x7f080021;
+        public static final int action_reset_miles=0x7f080022;
         public static final int dateButton=0x7f080012;
         public static final int descriptionEditText=0x7f080016;
         public static final int descriptionTextView=0x7f080015;
@@ -100,6 +101,7 @@ public final class R {
         public static final int new_mile_type=0x7f050006;
         public static final int new_school_mile=0x7f050007;
         public static final int new_sport_mile=0x7f050009;
+        public static final int reset=0x7f050012;
     }
     public static final class style {
         /** 

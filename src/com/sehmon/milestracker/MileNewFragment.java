@@ -13,6 +13,7 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -121,7 +122,7 @@ public class MileNewFragment extends Fragment {
         //Gives the mile a new random UUID for identification
         mId = UUID.randomUUID();
 		
-		
+		Log.e("date", mDate.toString());
 		
 		i.putExtra(MILE_TYPE, mType);
 		i.putExtra(MILE_DATE, mDate);
@@ -250,12 +251,6 @@ public class MileNewFragment extends Fragment {
 
 	    return calendar.getTime();
 		
-	}
-	
-	@Override
-	public void onPause(){
-		super.onPause();
-		MileLab.get(getActivity()).saveMiles();
 	}
 	
 }
