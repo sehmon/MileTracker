@@ -76,6 +76,10 @@ public class MileHomeFragment extends Fragment {
 	        	break;
 	        	
 	        	//TODO make view reset on button press, (Dialog Fragment or Settings)
+	        	
+	        case R.id.action_list_view:
+	        	Intent i = new Intent(getActivity(), MileListActivity.class);
+	        	startActivity(i);
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }

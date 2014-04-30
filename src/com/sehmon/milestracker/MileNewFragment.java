@@ -12,7 +12,6 @@ import android.app.Fragment;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -83,9 +82,6 @@ public class MileNewFragment extends Fragment {
 	        case R.id.action_addMile:
 	        	saveMile();
 	        case android.R.id.home:
-	        	if(NavUtils.getParentActivityName(getActivity()) != null){
-	        		NavUtils.navigateUpFromSameTask(getActivity());
-	        	}
 	        	
 	        default:
 	            return super.onOptionsItemSelected(item);
@@ -112,7 +108,8 @@ public class MileNewFragment extends Fragment {
         }
         
         //Gets the description of the mile
-        mDescription = descriptionEditText.toString();
+        mDescription = descriptionEditText.getText().toString();
+        Log.i("test", mDescription);
         try{
         mLength = Double.parseDouble(lengthEditText.getText().toString());
         } catch(Exception e){
@@ -131,7 +128,7 @@ public class MileNewFragment extends Fragment {
 		i.putExtra(MILE_DESCRIPTION, mDescription);
 		i.putExtra(MILE_ID, mId);
 		
-		Toast.makeText(getActivity(), String.valueOf(mId), Toast.LENGTH_SHORT).show();
+		Toast.makeText(getActivity(), mDescription, Toast.LENGTH_SHORT).show();
 		
 		
 		getActivity().setResult(RESULT_OK, i);
